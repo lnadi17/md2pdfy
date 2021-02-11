@@ -1,15 +1,16 @@
 import argparse
-import markdown
 import random
-from pdfy import Pdfy
-from os import path, mkdir, remove
 from glob import glob
+from os import path, mkdir, remove
+from shutil import copy2, move
+from string import ascii_lowercase
+
+import markdown
+from PyPDF2 import PdfFileMerger
 from bs4 import BeautifulSoup
+from pdfy import Pdfy
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from PyPDF2 import PdfFileMerger
-from string import ascii_lowercase
-from shutil import copy2, move
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
     parser.add_argument('-o', '--output',
                         help="output merged pdf file name",
                         type=str,
-                        default="book")
+                        default="output")
     parser.add_argument('-i', '--install-driver',
                         help="installs required web driver version and quits, ignoring other arguments",
                         action='store_true')
@@ -76,7 +77,7 @@ def main():
     args = parser.parse_args()
 
     if args.install_driver:
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        webdriver.Chrome(ChromeDriverManager().install())
         return
 
     input_files = []
