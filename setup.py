@@ -1,5 +1,4 @@
-#!/usr/bin/env python
+from setuptools import setup
 
-from distutils.core import setup
-
-setup()
+if __name__ == "__main__":
+    setup()
