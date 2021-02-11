@@ -92,16 +92,7 @@ def main():
     if not input_files:
         raise Exception("Sorry, input files don't exist or they're entered incorrectly")
 
-    p = Pdfy(options={"paperWidth": args.paper_width,
-                      "paperHeight": args.paper_height,
-                      "marginTop": args.margin_top,
-                      "marginBottom": args.margin_right,
-                      "marginLeft": args.margin_left,
-                      "marginRight": args.margin_right,
-                      "printBackground": args.no_background,
-                      "preferCSSPageSize": args.prefer_css_page_size,
-                      "scale": args.scale,
-                      "landscape": args.landscape})
+    p = Pdfy()
     pdf_names = []
     for file in input_files:
         with open(file, 'r', encoding='utf-8') as src:
@@ -131,7 +122,16 @@ def main():
 
             random_name_pdf = name + '_' + ''.join(random.choices(ascii_lowercase, k=5)) + '.pdf'
             pdf_names.append(random_name_pdf)
-            p.html_to_pdf(random_name_html, random_name_pdf)
+            p.html_to_pdf(random_name_html, random_name_pdf, options={"paperWidth": args.paper_width,
+                                                                      "paperHeight": args.paper_height,
+                                                                      "marginTop": args.margin_top,
+                                                                      "marginBottom": args.margin_right,
+                                                                      "marginLeft": args.margin_left,
+                                                                      "marginRight": args.margin_right,
+                                                                      "printBackground": args.no_background,
+                                                                      "preferCSSPageSize": args.prefer_css_page_size,
+                                                                      "scale": args.scale,
+                                                                      "landscape": args.landscape})
 
             # move temporary htmls into dedicated folder else remove them
             # we'll do the same to the pdfs after merging them
