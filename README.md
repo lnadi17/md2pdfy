@@ -13,7 +13,7 @@ Correct version of WebDrivers can be installed automatically from this package t
 md2pdfy . --install-driver
 ```
 Before running this program, installed **WebDrivers must be added to PATH**. 
-After you do that, you can convert one or multiple md files to pdf with calling `md2pdfy` command
+After you do that, you can convert one or multiple md files to pdf with calling `md2pdfy` command.
 
 # Usage
 Typical usage of this tool looks something like this:
