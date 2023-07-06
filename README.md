@@ -65,3 +65,7 @@ optional arguments:
                         false, in which case the content will be scaled to fit the paper size
   -l, --landscape       paper orientation. defaults to false
 ```
+
+## Future Development
+
+This python package is heavily dependent on [pdfy](https://github.com/mikahama/pdfy), which appears to be broken and not actively maintained. Also, there is selenium drivers issue where the error is thrown when dowloading a driver, PyChromeDevTools also throws an error when connecting, etc. Because of all this, tests have been failing for some time for this repository. Considering the difficulties, I decided to archive this repository, and remove the package from PyPi as well. Feel free to explore the repository, fork it, and make any modifications based on your needs.
