@@ -2,7 +2,7 @@
 Convert markdown files into PDF format. This tool uses Chrome printing functionality, so rendered PDFs look good.
 Output files can be styled with CSS and page properties (margins, scale, etc.) can be specified.
 
-# Installation
+## Installation
 You can install this package via pip:
 ```
 pip install md2pdfy
@@ -15,7 +15,7 @@ md2pdfy . --install-driver
 Before running this program, installed **WebDrivers must be added to PATH**. 
 After you do that, you can convert one or multiple md files to pdf with calling `md2pdfy` command.
 
-# Usage
+## Usage
 Typical usage of this tool looks something like this:
 ```
 md2pdfy example1.md example2.md --css-style style.css --landscape -o result.pdf
